@@ -1,7 +1,7 @@
-<center>
+<div align="center">
     <img src="logo_text.png" width="250" alt="BetterMood">
     <h1>Better Mood</h1>
-</center>
+</div>
 
 ---
 
