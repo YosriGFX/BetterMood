@@ -1,6 +1,6 @@
 ## BetterMood
 
-![BetterMood](logo_text.png)
+![BetterMood](logo_text.png =250x)
 
 ---
 
