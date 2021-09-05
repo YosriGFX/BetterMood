@@ -1,5 +1,7 @@
 ## BetterMood
 
+![BetterMood](logo_text.png)
+
 ---
 
 ```Proudly written by Yosri Ghorbel```
