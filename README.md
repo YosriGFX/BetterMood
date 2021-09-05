@@ -1,6 +1,6 @@
 ## BetterMood
 
-![BetterMood](logo_text.png =250x)
+<img src="logo_text.png" width="200" alt="BetterMood">
 
 ---
 
