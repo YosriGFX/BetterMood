@@ -47,6 +47,7 @@ struct Login : View {
     @Binding var index: Int
     @State var email = ""
     @State var password = ""
+    @State var show_hide = 0
     // Email Validator
     func textFieldValidatorEmail(_ string: String) -> Bool {
             if string.count > 100 {
@@ -70,26 +71,35 @@ struct Login : View {
                     HStack(spacing: 25){
                         Image(systemName: "person.fill")
                             .foregroundColor(Color("Color"))
-                        SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")),    text: self.$email, editingChanged: {(isChanged) in
-                                if !isChanged {
-                                     if self.textFieldValidatorEmail(self.email) {
-                                     } else {
-                                       self.email = ""
-                                     }
-                               }
-                            })
+                        SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")), text: self.$email)
                             .foregroundColor(Color("Color"))
                             .font(.system(size: 20))
                             .padding(.vertical, 10)
+                        .padding(.leading, 7.5)
                     }
                     Divider().background(Color("Disabled"))
                     HStack(spacing: 25){
-                        Image(systemName: "lock.fill")
+                        Image(systemName: self.show_hide == 0 ? "eye.fill" : "eye.slash.fill")
                             .foregroundColor(Color("Color"))
-                        SuperSecureField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
-                            .foregroundColor(Color("Color"))
-                            .font(.system(size: 20))
-                            .padding(.vertical, 10)
+                            .onTapGesture {
+                                if self.show_hide == 1 {
+                                    self.show_hide = 0
+                                } else {
+                                    self.show_hide = 1
+                                }
+                            }
+                        if self.show_hide == 0 {
+                            SuperSecureField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        } else {
+                            SuperTextField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        }
+                        
                     }
                     Divider().background(Color("Disabled"))
                         .padding(.bottom, 25)
@@ -143,7 +153,7 @@ struct Register : View {
     @State var year = ""
     @State var email = ""
     @State var password = ""
-    @State var password_2 = ""
+    @State var show_hide = 0
     // Email Validator
     func textFieldValidatorEmail(_ string: String) -> Bool {
             if string.count > 100 {
@@ -214,14 +224,7 @@ struct Register : View {
                         HStack(spacing: 25){
                             Image(systemName: "envelope.fill")
                                 .foregroundColor(Color("Color"))
-                            SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")),    text: self.$email, editingChanged: {(isChanged) in
-                                    if !isChanged {
-                                         if self.textFieldValidatorEmail(self.email) {
-                                         } else {
-                                           self.email = ""
-                                         }
-                                   }
-                                })
+                            SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")), text: self.$email)
                                 .foregroundColor(Color("Color"))
                                 .font(.system(size: 20))
                                 .padding(.vertical, 10)
@@ -230,32 +233,31 @@ struct Register : View {
                     }
                     VStack{
                         HStack(spacing: 25){
-                            Image(systemName: "lock.fill")
+                            Image(systemName: self.show_hide == 0 ? "eye.fill" : "eye.slash.fill")
                                 .foregroundColor(Color("Color"))
-                            SuperSecureField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
-                                .onReceive(password.publisher.collect()) {
-                                    password = String($0.prefix(10))
+                                .onTapGesture {
+                                    if self.show_hide == 1 {
+                                        self.show_hide = 0
+                                    } else {
+                                        self.show_hide = 1
+                                    }
                                 }
-                                .foregroundColor(Color("Color"))
-                                .font(.system(size: 20))
-                                .padding(.vertical, 10)
+                            if self.show_hide == 0 {
+                                SuperSecureField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
+                                    .foregroundColor(Color("Color"))
+                                    .font(.system(size: 20))
+                                    .padding(.vertical, 10)
+                                    .padding(.leading, -5)
+                            } else {
+                                SuperTextField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
+                                    .foregroundColor(Color("Color"))
+                                    .font(.system(size: 20))
+                                    .padding(.vertical, 10)
+                                    .padding(.leading, -5)
+                            }
+                            
                         }
                         Divider().background(Color("Disabled"))
-                    }
-                    VStack{
-                        HStack(spacing: 25){
-                            Image(systemName: "lock.fill")
-                                .foregroundColor(Color("Color"))
-                            SuperSecureField(placeholder: Text("Confirm Password").foregroundColor(Color("Disabled")), text: self.$password_2)
-                                .onReceive(password_2.publisher.collect()) {
-                                    password_2 = String($0.prefix(10))
-                                }
-                                .foregroundColor(Color("Color"))
-                                .font(.system(size: 20))
-                                .padding(.vertical, 10)
-                        }
-                        Divider().background(Color("Disabled"))
-                            .padding(.bottom, 25)
                     }
                     HStack(spacing: 25){
                         Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
@@ -308,7 +310,7 @@ struct CShape_2 : Shape {
             path.move(to: CGPoint(x: 0, y: 100))
             path.addLine(to: CGPoint(x: 0, y: rect.height))
             path.addLine(to: CGPoint(x: rect.width, y: rect.height))
-            path.addLine(to: CGPoint(x: rect.height, y: 0))
+            path.addLine(to: CGPoint(x: rect.width, y: 0))
         }
     }
 }
@@ -345,5 +347,11 @@ struct SuperSecureField: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
+            .previewDisplayName("iPhone 12 Pro Max")
+//        ContentView()
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+//           .previewDisplayName("iPhone 12")
+        
     }
 }
