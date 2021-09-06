@@ -17,7 +17,6 @@
 
 <div align="left">
     <img src="screenshot/login.png" width="200" alt="BetterMood">
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <img src="screenshot/register.png" width="200" alt="BetterMood">
 </div>
 
