@@ -16,16 +16,24 @@ struct ContentView: View {
 
 // Home Page
 struct Home : View {
+    @State var index = 0
     var body: some View{
         GeometryReader{ geometry in
             VStack{
                 Image("logo_text")
                     .resizable()
                     .frame(width: 797 / 4, height: 488 / 4)
-                    .padding(.bottom, 40)
-                    .padding(.top, 125)
+                    .padding(.bottom, 50)
+                    .padding(.top, 90)
                     .shadow(color: Color("Background_2"), radius: 5, x: 0, y: 5)
-                Login()
+                ZStack(alignment: .top){
+                    Login(index: self.$index)
+                        .zIndex(self.index == 0 ? 1 : 0)
+                        .opacity(self.index == 0 ? 1 : 0.25)
+                    Register(index: self.$index)
+                        .zIndex(self.index == 0 ? 0 : 1)
+                        .opacity(self.index == 0 ? 0 : 1)
+                }
                 Spacer()
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -36,8 +44,18 @@ struct Home : View {
 
 // Login Page
 struct Login : View {
+    @Binding var index: Int
     @State var email = ""
     @State var password = ""
+    // Email Validator
+    func textFieldValidatorEmail(_ string: String) -> Bool {
+            if string.count > 100 {
+                return false
+            }
+            let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" // short format
+            let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+            return emailPredicate.evaluate(with: string)
+    }
     var body: some View{
         ZStack(alignment: .bottom){
             VStack{
@@ -47,11 +65,19 @@ struct Login : View {
                         .font(.system(size: 40))
                     Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                 }
+                .padding(.top, 25)
                 VStack{
                     HStack(spacing: 25){
                         Image(systemName: "person.fill")
                             .foregroundColor(Color("Color"))
-                        SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")), text: self.$email)
+                        SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")),    text: self.$email, editingChanged: {(isChanged) in
+                                if !isChanged {
+                                     if self.textFieldValidatorEmail(self.email) {
+                                     } else {
+                                       self.email = ""
+                                     }
+                               }
+                            })
                             .foregroundColor(Color("Color"))
                             .font(.system(size: 20))
                             .padding(.vertical, 10)
@@ -71,7 +97,17 @@ struct Login : View {
                         Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                         Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
                             Text("Forget your password?")
-                                .foregroundColor(Color("Color").opacity(0.75))
+                                .foregroundColor(Color("Color").opacity(0.9))
+                                .font(.system(size: 15))
+                        }
+                    }
+                    HStack(spacing: 25){
+                        Spacer(minLength: 0)
+                        Button(action: {
+                            self.index = 1
+                        }){
+                            Text("Not registered? Sign up now")
+                                .foregroundColor(Color("Color").opacity(0.9))
                                 .font(.system(size: 15))
                         }
                     }
@@ -97,6 +133,162 @@ struct Login : View {
     }
 }
 
+// Register Page
+struct Register : View {
+    @Binding var index: Int
+    @State var fname = ""
+    @State var lname = ""
+    @State var day = ""
+    @State var month = ""
+    @State var year = ""
+    @State var email = ""
+    @State var password = ""
+    @State var password_2 = ""
+    // Email Validator
+    func textFieldValidatorEmail(_ string: String) -> Bool {
+            if string.count > 100 {
+                return false
+            }
+            let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" // short format
+            let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+            return emailPredicate.evaluate(with: string)
+    }
+    var body: some View{
+        ZStack(alignment: .bottom){
+            VStack{
+                HStack {
+                    Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                    Text("Register")
+                        .foregroundColor(Color("Color"))
+                        .font(.system(size: 40))
+                }
+                .padding(.top, 25)
+                VStack{
+                    VStack{
+                        HStack(spacing: 25){
+                            Image(systemName: "person.fill")
+                                .foregroundColor(Color("Color"))
+                            SuperTextField(placeholder: Text("First name").foregroundColor(Color("Disabled")), text: self.$fname)
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                            SuperTextField(placeholder: Text("Last name").foregroundColor(Color("Disabled")), text: self.$lname)
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        }
+                        Divider().background(Color("Disabled"))
+                    }
+                    VStack {
+                        HStack(spacing: 25){
+                            Image(systemName: "calendar")
+                                .foregroundColor(Color("Color"))
+                            SuperTextField(placeholder: Text("DD").foregroundColor(Color("Disabled")), text: self.$day)
+                                .keyboardType(.decimalPad)
+                                .onReceive(day.publisher.collect()) {
+                                        day = String($0.prefix(2))
+                                }
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                            SuperTextField(placeholder: Text("MM").foregroundColor(Color("Disabled")), text: self.$month)
+                                .keyboardType(.decimalPad)
+                                .onReceive(month.publisher.collect()) {
+                                        month = String($0.prefix(2))
+                                }
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                            SuperTextField(placeholder: Text("YYYY").foregroundColor(Color("Disabled")), text: self.$year)
+                                .keyboardType(.decimalPad)
+                                .onReceive(year.publisher.collect()) {
+                                        year = String($0.prefix(4))
+                                }
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        }
+                        Divider().background(Color("Disabled"))
+                    }
+                    VStack{
+                        HStack(spacing: 25){
+                            Image(systemName: "envelope.fill")
+                                .foregroundColor(Color("Color"))
+                            SuperTextField(placeholder: Text("Email Address").foregroundColor(Color("Disabled")),    text: self.$email, editingChanged: {(isChanged) in
+                                    if !isChanged {
+                                         if self.textFieldValidatorEmail(self.email) {
+                                         } else {
+                                           self.email = ""
+                                         }
+                                   }
+                                })
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        }
+                        Divider().background(Color("Disabled"))
+                    }
+                    VStack{
+                        HStack(spacing: 25){
+                            Image(systemName: "lock.fill")
+                                .foregroundColor(Color("Color"))
+                            SuperSecureField(placeholder: Text("Password").foregroundColor(Color("Disabled")), text: self.$password)
+                                .onReceive(password.publisher.collect()) {
+                                    password = String($0.prefix(10))
+                                }
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        }
+                        Divider().background(Color("Disabled"))
+                    }
+                    VStack{
+                        HStack(spacing: 25){
+                            Image(systemName: "lock.fill")
+                                .foregroundColor(Color("Color"))
+                            SuperSecureField(placeholder: Text("Confirm Password").foregroundColor(Color("Disabled")), text: self.$password_2)
+                                .onReceive(password_2.publisher.collect()) {
+                                    password_2 = String($0.prefix(10))
+                                }
+                                .foregroundColor(Color("Color"))
+                                .font(.system(size: 20))
+                                .padding(.vertical, 10)
+                        }
+                        Divider().background(Color("Disabled"))
+                            .padding(.bottom, 25)
+                    }
+                    HStack(spacing: 25){
+                        Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                        Button(action: {
+                            self.index = 0
+                        }){
+                            Text("Already have an account? Login now")
+                                .foregroundColor(Color("Color").opacity(0.9))
+                                .font(.system(size: 15))
+                        }
+                    }
+                }
+                .padding(.top, 25)
+                .padding(.bottom, 25)
+            }
+            .padding(.all, 25)
+            .background(Color("Background_2"))
+            .clipShape(CShape_2())
+            Button(action: {}){
+                Text("Sign Up")
+                    .bold()
+                    .foregroundColor(Color("Background_2"))
+                    .padding(.vertical)
+                    .padding(.horizontal, 50)
+                    .background(Color("Color"))
+                    .clipShape(Capsule())
+                    .shadow(color: Color("Background_2"), radius: 5, x: 0, y: 5)
+            }
+            .offset(y: 25)
+        }
+    }
+}
+
 // Login Shape
 struct CShape : Shape {
     func path(in rect: CGRect) -> Path {
@@ -105,6 +297,18 @@ struct CShape : Shape {
             path.addLine(to: CGPoint(x: rect.width, y: rect.height))
             path.addLine(to: CGPoint(x: 0, y: rect.height))
             path.addLine(to: CGPoint(x: 0, y: 0))
+        }
+    }
+}
+
+// Register Shape
+struct CShape_2 : Shape {
+    func path(in rect: CGRect) -> Path {
+        return Path{path in
+            path.move(to: CGPoint(x: 0, y: 100))
+            path.addLine(to: CGPoint(x: 0, y: rect.height))
+            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+            path.addLine(to: CGPoint(x: rect.height, y: 0))
         }
     }
 }
