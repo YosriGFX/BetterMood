@@ -20,7 +20,7 @@
 
 <div align="center">
     <img src="screenshot/login.png" width="175" alt="BetterMood">
-    &nbsp;&nbsp;&nbsp;
+    <div width="50"></div>
     <img src="screenshot/register.png" width="175" alt="BetterMood">
 </div>
 
