@@ -11,12 +11,9 @@
 
 > All generated information will be based on the user's horoscope sign as I believe in astrology, and the actual user face signs.
 
-
----
-
 ## User Experience
 
-### Authentication
+### Authentication Page
 
 <div align="center">
     <img src="screenshot/login.png" width="175" alt="BetterMood">
@@ -24,6 +21,7 @@
     <img src="screenshot/register.png" width="175" alt="BetterMood">
 </div>
 
+---
 
 ```Proudly written by Yosri Ghorbel```
 
