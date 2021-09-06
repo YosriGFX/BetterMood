@@ -14,6 +14,15 @@
 
 ---
 
+## User Experience
+
+### Authentication
+
+<div align="center">
+    <img src="screenshot/login.png" width="50" alt="BetterMood">
+    <img src="screenshot/register.png" width="50" alt="BetterMood">
+</div>
+
 
 ```Proudly written by Yosri Ghorbel```
 
