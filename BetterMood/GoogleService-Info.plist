@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>273766829168-724rkc49n6fkifuifovoi2q3var0ns13.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.273766829168-724rkc49n6fkifuifovoi2q3var0ns13</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDkhzGggp8kH0ZI81HSCGI4oh10qN4onq4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>273766829168</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>school.Holberton.BetterMood</string>
+	<key>PROJECT_ID</key>
+	<string>bettermood-api</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bettermood-api.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:273766829168:ios:e62a1540398701ce2a78b5</string>
+</dict>
+</plist>

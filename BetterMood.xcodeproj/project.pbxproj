@@ -3,23 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814A28B59EEEC6E9A5505BC6 /* Pods_BetterMood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE1EDB0E36BC34A77D7DB24 /* Pods_BetterMood.framework */; };
+		990AEF6726E7E3C40042291C /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AEF6626E7E3C40042291C /* Register.swift */; };
+		990AEF6926E7E4230042291C /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AEF6826E7E4230042291C /* Login.swift */; };
+		990AEF6B26E7E45F0042291C /* AlertBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AEF6A26E7E45F0042291C /* AlertBox.swift */; };
+		990AEF6D26E7E4A90042291C /* Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990AEF6C26E7E4A90042291C /* Customization.swift */; };
+		990AEF6F26E7F4960042291C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 990AEF6E26E7F4960042291C /* GoogleService-Info.plist */; };
 		9911C2BF26E56295000964B0 /* BetterMoodApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911C2BE26E56295000964B0 /* BetterMoodApp.swift */; };
 		9911C2C126E56295000964B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911C2C026E56295000964B0 /* ContentView.swift */; };
 		9911C2C326E56296000964B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9911C2C226E56296000964B0 /* Assets.xcassets */; };
 		9911C2C626E56296000964B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9911C2C526E56296000964B0 /* Preview Assets.xcassets */; };
+		99AB0F7126E979E3008FE232 /* user_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB0F7026E979E3008FE232 /* user_api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B8D7FC2F8EF33A5689F1F8F /* Pods-BetterMood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterMood.release.xcconfig"; path = "Target Support Files/Pods-BetterMood/Pods-BetterMood.release.xcconfig"; sourceTree = "<group>"; };
+		7BE1EDB0E36BC34A77D7DB24 /* Pods_BetterMood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterMood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		982BD1261DD3B0C5DE185137 /* Pods-BetterMood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterMood.debug.xcconfig"; path = "Target Support Files/Pods-BetterMood/Pods-BetterMood.debug.xcconfig"; sourceTree = "<group>"; };
+		990AEF6626E7E3C40042291C /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		990AEF6826E7E4230042291C /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		990AEF6A26E7E45F0042291C /* AlertBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBox.swift; sourceTree = "<group>"; };
+		990AEF6C26E7E4A90042291C /* Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customization.swift; sourceTree = "<group>"; };
+		990AEF6E26E7F4960042291C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9911C2BB26E56295000964B0 /* BetterMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9911C2BE26E56295000964B0 /* BetterMoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterMoodApp.swift; sourceTree = "<group>"; };
 		9911C2C026E56295000964B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9911C2C226E56296000964B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9911C2C526E56296000964B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9911C2C726E56296000964B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99AB0F7026E979E3008FE232 /* user_api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = user_api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				814A28B59EEEC6E9A5505BC6 /* Pods_BetterMood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +55,8 @@
 			children = (
 				9911C2BD26E56295000964B0 /* BetterMood */,
 				9911C2BC26E56295000964B0 /* Products */,
+				C4174E362B6F3B50C2727264 /* Pods */,
+				D303FE2FEB973227AA5C7F1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +71,14 @@
 		9911C2BD26E56295000964B0 /* BetterMood */ = {
 			isa = PBXGroup;
 			children = (
+				990AEF6E26E7F4960042291C /* GoogleService-Info.plist */,
 				9911C2BE26E56295000964B0 /* BetterMoodApp.swift */,
 				9911C2C026E56295000964B0 /* ContentView.swift */,
+				990AEF6C26E7E4A90042291C /* Customization.swift */,
+				990AEF6A26E7E45F0042291C /* AlertBox.swift */,
+				990AEF6626E7E3C40042291C /* Register.swift */,
+				99AB0F7026E979E3008FE232 /* user_api.swift */,
+				990AEF6826E7E4230042291C /* Login.swift */,
 				9911C2C226E56296000964B0 /* Assets.xcassets */,
 				9911C2C726E56296000964B0 /* Info.plist */,
 				9911C2C426E56296000964B0 /* Preview Content */,
@@ -69,6 +94,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C4174E362B6F3B50C2727264 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				982BD1261DD3B0C5DE185137 /* Pods-BetterMood.debug.xcconfig */,
+				0B8D7FC2F8EF33A5689F1F8F /* Pods-BetterMood.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D303FE2FEB973227AA5C7F1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BE1EDB0E36BC34A77D7DB24 /* Pods_BetterMood.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9911C2CA26E56296000964B0 /* Build configuration list for PBXNativeTarget "BetterMood" */;
 			buildPhases = (
+				7CA486D07521E19A00562F94 /* [CP] Check Pods Manifest.lock */,
 				9911C2B726E56295000964B0 /* Sources */,
 				9911C2B826E56295000964B0 /* Frameworks */,
 				9911C2B926E56295000964B0 /* Resources */,
+				3E6DC3E553523D158E98756A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,18 +172,66 @@
 			files = (
 				9911C2C626E56296000964B0 /* Preview Assets.xcassets in Resources */,
 				9911C2C326E56296000964B0 /* Assets.xcassets in Resources */,
+				990AEF6F26E7F4960042291C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3E6DC3E553523D158E98756A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetterMood/Pods-BetterMood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetterMood/Pods-BetterMood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetterMood/Pods-BetterMood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CA486D07521E19A00562F94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BetterMood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9911C2B726E56295000964B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AB0F7126E979E3008FE232 /* user_api.swift in Sources */,
+				990AEF6B26E7E45F0042291C /* AlertBox.swift in Sources */,
+				990AEF6726E7E3C40042291C /* Register.swift in Sources */,
 				9911C2C126E56295000964B0 /* ContentView.swift in Sources */,
 				9911C2BF26E56295000964B0 /* BetterMoodApp.swift in Sources */,
+				990AEF6926E7E4230042291C /* Login.swift in Sources */,
+				990AEF6D26E7E4A90042291C /* Customization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +356,7 @@
 		};
 		9911C2CB26E56296000964B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982BD1261DD3B0C5DE185137 /* Pods-BetterMood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +379,7 @@
 		};
 		9911C2CC26E56296000964B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B8D7FC2F8EF33A5689F1F8F /* Pods-BetterMood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
