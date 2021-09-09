@@ -16,11 +16,14 @@
 ### Authentication Page
 
 <div align="center">
+    <h1>Login</h1>
     <img src="screenshot/login.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w1.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w2.png" width="175" alt="BetterMood">
+    <h1>Reset Password</h1>
     <img src="screenshot/forget.png" width="175" alt="BetterMood">
     <img src="screenshot/forget_w1.png" width="175" alt="BetterMood">
+    <h1>Register</h1>
     <img src="screenshot/register.png" width="175" alt="BetterMood">
     <img src="screenshot/register_2.png" width="175" alt="BetterMood">
     <img src="screenshot/register_w1.png" width="175" alt="BetterMood">
