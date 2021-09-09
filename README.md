@@ -4,26 +4,26 @@
 
 ---
 
-## Introduction
+# Introduction
 > BetterMood is an iOS app that implements ARKIT to recognize user’s emotions, convert it into categories then send to our api along with the user’s date of birth and name, to end up with a motivational paragraph that makes the user feel better.
 
 > Also, the App will show some suggested youtube music videos titles that match the user's feelings.
 
 > All generated information will be based on the user's horoscope sign as I believe in astrology, and the actual user face signs.
 
-## User Experience
+# User Experience
 
-### Authentication Page
+## Authentication Page
 
 <div align="center">
-    <h1>Login</h1>
+    <h3>Login</h3>
     <img src="screenshot/login.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w1.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w2.png" width="175" alt="BetterMood">
-    <h1>Reset Password</h1>
+    <h3>Reset Password</h3>
     <img src="screenshot/forget.png" width="175" alt="BetterMood">
     <img src="screenshot/forget_w1.png" width="175" alt="BetterMood">
-    <h1>Register</h1>
+    <h3>Register</h3>
     <img src="screenshot/register.png" width="175" alt="BetterMood">
     <img src="screenshot/register_2.png" width="175" alt="BetterMood">
     <img src="screenshot/register_w1.png" width="175" alt="BetterMood">
