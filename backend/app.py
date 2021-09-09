@@ -13,7 +13,6 @@ database = mongo.db
 welcome = redirect('https://yosri.dev')
 
 
-
 @app.route('/', methods=['GET'])
 def index():
     '''index'''
@@ -25,7 +24,6 @@ def register():
     '''Sign up'''
     if 'BetterMood' not in request.headers['User-Agent']:
         abort(404)
-    print(request.headers['User-Agent'])
     required_data = ["user_id", "fname", "lname", "day", "month", "year", "email"]
     if request.form:
         data = request.form.to_dict()
@@ -46,7 +44,6 @@ def login():
     '''Sign up'''
     if 'BetterMood' not in request.headers['User-Agent']:
         abort(404)
-    print(request.headers['User-Agent'])
     if request.form:
         user_id = request.form.to_dict()
         data = database.users.find_one(user_id)
