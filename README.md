@@ -17,13 +17,16 @@
 
 <div align="center">
     <h3>Login</h3>
+    <hr>
     <img src="screenshot/login.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w1.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w2.png" width="175" alt="BetterMood">
     <h3>Reset Password</h3>
+    <hr>
     <img src="screenshot/forget.png" width="175" alt="BetterMood">
     <img src="screenshot/forget_w1.png" width="175" alt="BetterMood">
     <h3>Register</h3>
+    <hr>
     <img src="screenshot/register.png" width="175" alt="BetterMood">
     <img src="screenshot/register_2.png" width="175" alt="BetterMood">
     <img src="screenshot/register_w1.png" width="175" alt="BetterMood">
