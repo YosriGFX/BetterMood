@@ -15,7 +15,7 @@
 
 ### Authentication Page
 
-<div align="left">
+<div align="center">
     <img src="screenshot/login.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w1.png" width="175" alt="BetterMood">
     <img src="screenshot/login_w2.png" width="175" alt="BetterMood">
