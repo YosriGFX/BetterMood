@@ -13,7 +13,6 @@ import io
 
 
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb+srv://bettermood:better123@bettermood.sjder.mongodb.net/BetterMood?retryWrites=true&w=majority'
 mongo = PyMongo(app)
 database = mongo.db
 welcome = redirect('https://yosri.dev')
