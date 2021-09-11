@@ -5,6 +5,11 @@
 '''
 from flask import Flask, request, redirect, abort, jsonify
 from flask_pymongo import PyMongo
+from fer import FER
+from cores.astrology import get_astrology
+import matplotlib.pyplot as plt 
+import base64
+import io
 
 
 app = Flask(__name__)
@@ -54,6 +59,42 @@ def login():
                 'fname': data['fname'],
                 'lname': data['lname']
             }) 
+    else:
+        abort(404)
+
+
+@app.route('/ios/post_image', methods=['POST'])
+def post_image():
+    '''Analayse Picture'''
+    if 'BetterMood' not in request.headers['User-Agent']:
+        abort(404)
+    file = request.form['image'].encode()
+    img = base64.decodebytes(file)
+    test_image_one = plt.imread(io.BytesIO(img), format='JPG')
+    emo_detector = FER(mtcnn=True)
+    captured_emotions = emo_detector.detect_emotions(test_image_one)
+    if len(captured_emotions) == 0:
+        abort(404)
+    emotions = captured_emotions[0]['emotions']
+    for row in emotions:
+        emotions[row] *= 100
+        emotions[row] = int(emotions[row])
+    return jsonify(emotions)
+
+
+@app.route('/ios/astrology', methods=['POST'])
+def astrology():
+    '''Astrology'''
+    if 'BetterMood' not in request.headers['User-Agent']:
+        abort(404)
+    if request.form:
+        user_id = request.form.to_dict()
+        data = database.users.find_one(user_id)
+        if data is None:
+            abort(404)
+        else:
+            astrology_t = get_astrology(data['day'], data['month'], data['year'])
+            return jsonify(astrology_t) 
     else:
         abort(404)
 

@@ -1,2 +1,7 @@
 flask
+dnspython
 flask_pymongo
+BeautifulSoup
+fer
+tensorflow
+opencv
