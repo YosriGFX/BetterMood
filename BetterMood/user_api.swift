@@ -7,6 +7,12 @@
 
 import Foundation
 
+// Domain Name
+class domain: ObservableObject {
+    let domain = "ENDPOINT_URL"
+}
+
+
 // users
 struct users: Codable {
     var fname: String
@@ -18,9 +24,7 @@ struct User {
     func register_api(uid: String, fname: String, lname: String, day: String, month: String, year: String, email: String) -> Bool {
         let sem = DispatchSemaphore.init(value: 0)
         var success = false
-        var domain = ""
-        domain = "http://192.168.100.103"
-        let url = URL(string: domain + "/ios/register")
+        let url = URL(string: domain().domain + "/ios/register")
         guard let requestUrl = url else {
             return false
         }
@@ -43,9 +47,7 @@ struct User {
     func fetch_user_api(uid: String) -> Bool {
         let sem = DispatchSemaphore.init(value: 0)
         var success = false
-        var domain = ""
-        domain = "http://192.168.100.103"
-        let url = URL(string: domain + "/ios/login")
+        let url = URL(string: domain().domain + "/ios/login")
         guard let requestUrl = url else {
             return false
         }

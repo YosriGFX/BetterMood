@@ -13,14 +13,7 @@ struct ContentView: View {
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     var body: some View {
         if self.status {
-            Button(action: {
-                try! Auth.auth().signOut()
-                UserDefaults.standard.set(false, forKey: "status")
-                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-            }){
-                Text(UserDefaults.standard.value(forKey: "fname") as? String ?? "John")
-            }
-            .onAppear {
+            MainHome().onAppear {
                 NotificationCenter.default.addObserver(forName: NSNotification.Name("status"), object: nil, queue: .main) { (_) in
                     self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
                 }
@@ -28,7 +21,7 @@ struct ContentView: View {
         } else {
             LoginHome().onAppear {
                 try! Auth.auth().signOut()
-                UserDefaults.standard.set(false, forKey: "signed_in")
+                UserDefaults.standard.set(false, forKey: "status")
                 NotificationCenter.default.addObserver(forName: NSNotification.Name("status"), object: nil, queue: .main) { (_) in
                     self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
                 }
@@ -69,14 +62,5 @@ struct LoginHome: View {
             }
         }
         .background(Color("Background").edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/))
-    }
-}
-
-// iPhone 12 Pro Max
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
-            .previewDisplayName("iPhone 12 Pro Max")
     }
 }
