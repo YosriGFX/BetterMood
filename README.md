@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="logo_text.png" width="200" alt="BetterMood">
+    <img src="screenshot/logo_text.png" width="200" alt="BetterMood">
 </div>
 
 ---

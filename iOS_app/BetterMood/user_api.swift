@@ -9,9 +9,8 @@ import Foundation
 
 // Domain Name
 class domain: ObservableObject {
-    let domain = "ENDPOINT_URL"
+    let domain = "URL"
 }
-
 
 // users
 struct users: Codable {

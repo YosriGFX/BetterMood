@@ -5,3 +5,4 @@ BeautifulSoup
 fer
 tensorflow
 opencv
+matplotlib

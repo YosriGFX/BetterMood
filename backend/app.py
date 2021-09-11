@@ -13,6 +13,7 @@ import io
 
 
 app = Flask(__name__)
+app.config['MONGO_URI'] = 'Mongo_DB'
 mongo = PyMongo(app)
 database = mongo.db
 welcome = redirect('https://yosri.dev')

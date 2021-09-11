@@ -32,6 +32,7 @@ def get_astrology(day, month, year):
       'dobyear': year,
       'submit': 'submit'
     }
+    url = 'http://www.zodiac-astrology-horoscopes.com/biorhythm.php'
     response = requests.post(
         url,
         headers=headers,
