@@ -43,7 +43,7 @@
     <img src="screenshot/face_4.png" width="175" alt="BetterMood">
     <h3>Horoscope</h3>
     <img src="screenshot/face_5.png" width="175" alt="BetterMood">
-    <img src="screenshot/register_6.png" width="175" alt="BetterMood">
+    <img src="screenshot/face_6.png" width="175" alt="BetterMood">
 </div>
 
 ## Instruction
