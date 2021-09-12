@@ -37,15 +37,12 @@
 <div align="center">
     <h3>Parrot Face</h3>
     <img src="screenshot/face.png" width="175" alt="BetterMood">
-    &nbsp;
     <img src="screenshot/face_2.PNG" width="175" alt="BetterMood">
     <h3>Einstein 3D Face</h3>
     <img src="screenshot/face_3.png" width="175" alt="BetterMood">
-    &nbsp;
     <img src="screenshot/face_4.PNG" width="175" alt="BetterMood">
     <h3>Horoscope</h3>
     <img src="screenshot/face_5.PNG" width="175" alt="BetterMood">
-    &nbsp;
     <img src="screenshot/face_6.PNG" width="175" alt="BetterMood">
 </div>
 
