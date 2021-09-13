@@ -9,7 +9,7 @@
 
 > All generated information will be based on the user's horoscope sign as I believe in astrology, and the actual user face signs.
 
-![![BetterMood - Youtube](screenshot/youtube.png)](https://www.youtube.com/watch?v=gO9ZUg7p_DA)
+[![BetterMood - Youtube](screenshot/youtube.png)](https://www.youtube.com/watch?v=gO9ZUg7p_DA)
 
 # User Experience
 
